@@ -1,4 +1,4 @@
-# vehicle-detection-yolo
+# vehicle detection ultralytics yolo
 
 Installing
 - pip install -r requirements.txt / pip3 install -r requirements.txt
