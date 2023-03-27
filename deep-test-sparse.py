@@ -1,12 +1,7 @@
-from deepsparse import compile_model
-from deepsparse.utils import generate_random_inputs
+from ultralytics import YOLO
 
-onnx_filepath = "model/yolo-version-3.onnx"
-batch_size = 16
+# Load a model
+model = YOLO('model/yolo-version-3.pt')  # load an official model
 
-# Generate random sample input
-inputs = generate_random_inputs(onnx_filepath, batch_size)
-
-# Compile and run
-engine = compile_model(onnx_filepath, batch_size)
-outputs = engine.run(inputs)
+# Export the model
+model.export(format='tflite')
